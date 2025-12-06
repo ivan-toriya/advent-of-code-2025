@@ -1,7 +1,10 @@
 from math import prod
 from pathlib import Path
 
-input = (Path(__file__).parent / "sample.txt").read_text()
+input = (Path(__file__).parent / "input.txt").read_text()
+
+
+# === Part 1 ===
 
 
 def safe_cast(x: str) -> int | str:
@@ -11,7 +14,7 @@ def safe_cast(x: str) -> int | str:
         return x
 
 
-def parse_input(string: str):
+def parse_input_p1(string: str):
     """
     Converts
 
@@ -31,12 +34,8 @@ def parse_input(string: str):
     return [s for s in zip(*[map(safe_cast, line.split()) for line in string.splitlines()])]
 
 
-problems = parse_input(input)
-
-
 grand_total = 0
-
-for p in problems:
+for p in parse_input_p1(input):
     match p[-1]:
         case "+":
             grand_total += sum(p[:-1])
