@@ -3,13 +3,13 @@ from pathlib import Path
 
 def parse_input(filename: str):
     inp = (Path(__file__).parent / filename).read_text()
-    return [list(line) for line in inp.splitlines()]
+    return inp.splitlines()
 
 
 # === Part 1 ===
 
 
-def part1(manifold: list[list[str]]):
+def part1(manifold: list[str]):
     beams = [{manifold[0].index("S")}]
     n_splits = 0
 
