@@ -35,7 +35,7 @@ def part2(devices: dict[str, list[str]]) -> int:
     dac_upstream = set()
     fft_upstream = set()
 
-    path = []
+    # path = []
 
     while to_check:
         node = to_check.pop()
