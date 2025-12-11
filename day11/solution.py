@@ -43,6 +43,7 @@ def part2(devices: dict[str, list[str]]) -> int:
 
         if devices[node][0] == "out":
             parents = [key for key, value in devices.items() if node in value]
+            ...
 
             # Reset
             dac_encountered = 0
